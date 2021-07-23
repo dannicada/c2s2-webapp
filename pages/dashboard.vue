@@ -10,9 +10,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">C2S2 
-                    <!-- <sup>2</sup> -->
-                    </div>
+                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
             </a>
 
             <!-- Divider -->
@@ -116,7 +114,7 @@
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-                <button id="sidebarToggle" class="rounded-circle border-0" ></button>
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
             <!-- Sidebar Message -->

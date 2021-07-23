@@ -1,4 +1,4 @@
-# c2s2-webapp2
+# c2s2-webapp
 
 ## Build Setup
 
