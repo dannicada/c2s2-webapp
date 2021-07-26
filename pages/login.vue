@@ -67,11 +67,11 @@
                     </a> -->
                   </form>
                   <hr />
-                  <div class="text-center">
+                  <!-- <div class="text-center">
                     <a class="small" href="forgot-password.html"
                       >Forgot Password?</a
                     >
-                  </div>
+                  </div> -->
                   <div class="text-center">
                     <a
                       class="small"
@@ -111,7 +111,9 @@ export default {
         const response = await this.$auth.loginWith('local', { data: formData })
         console.log(response)
       } catch (err) {
-        console.log(err)
+        console.log(err.response)
+        if (err.response.status === 400) 
+        this.$toast.error('email or password incorrect')
       }
       finally{
         this.$nuxt.$loading.finish()

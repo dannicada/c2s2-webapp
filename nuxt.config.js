@@ -17,15 +17,15 @@ export default {
     script: [
       {
         // src: 'https://code.jquery.com/jquery-3.5.1.slim.min.js',
-        src: 'vendor/jquery/jquery.min.js'
+        src: 'vendor/jquery/jquery.min.js',
       },
       {
         // src: 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js',
-        src: 'vendor/bootstrap/js/bootstrap.bundle.min.js'
+        src: 'vendor/bootstrap/js/bootstrap.bundle.min.js',
       },
       {
-        src: 'js/sb-admin-2.min.js'
-      }
+        src: 'js/sb-admin-2.min.js',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -69,16 +69,21 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    '@nuxtjs/toast',
   ],
 
+  toast: {
+    position: 'bottom-right',
+    duration: 6000,
+  },
   auth: {
     // Options
     redirect: {
       login: '/login',
       logout: '/',
       callback: '/login',
-      home: '/dashboard'
+      home: '/dashboard',
     },
     strategies: {
       local: {
@@ -86,7 +91,7 @@ export default {
           property: 'access_token',
           global: true,
           required: true,
-          type: 'Bearer'
+          type: 'Bearer',
         },
         user: {
           property: false,
@@ -95,15 +100,15 @@ export default {
         endpoints: {
           login: { url: '/login/', method: 'post' },
           logout: { url: '/logout/', method: 'post' },
-          user: {url: '/me/', method: 'get'},
-        }
-      }
-    }
+          user: { url: '/me/', method: 'get' },
+        },
+      },
+    },
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    credentials: true
+    credentials: true,
   },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
