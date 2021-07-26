@@ -17,21 +17,21 @@ export default {
     script: [
       {
         // src: 'https://code.jquery.com/jquery-3.5.1.slim.min.js',
-        src: 'vendor/jquery/jquery.min.js',
+        src: '/vendor/jquery/jquery.min.js',
       },
       {
         // src: 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js',
-        src: 'vendor/bootstrap/js/bootstrap.bundle.min.js',
+        src: '/vendor/bootstrap/js/bootstrap.bundle.min.js',
       },
       {
-        src: 'js/sb-admin-2.min.js',
+        src: '/js/sb-admin-2.min.js',
       },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'vendor/fontawesome-free/css/all.min.css',
+        href: '/vendor/fontawesome-free/css/all.min.css',
       },
       {
         rel: 'stylesheet',
@@ -39,7 +39,7 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: 'css/sb-admin-2.min.css',
+        href: '/css/sb-admin-2.min.css',
       },
       {
         rel: 'stylesheet',
