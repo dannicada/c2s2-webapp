@@ -52,8 +52,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
-
+  plugins: ['~/plugins/axios'],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -69,11 +68,43 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
   ],
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  auth: {
+    // Options
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/login',
+      home: '/dashboard'
+    },
+    strategies: {
+      local: {
+        token: {
+          property: 'access_token',
+          global: true,
+          required: true,
+          type: 'Bearer'
+        },
+        user: {
+          property: false,
+          autoFetch: true,
+        },
+        endpoints: {
+          login: { url: '/login/', method: 'post' },
+          logout: { url: '/logout/', method: 'post' },
+          user: {url: '/me/', method: 'get'},
+        }
+      }
+    }
+  },
 
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {
+    credentials: true
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
@@ -83,4 +114,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  loading: '~/components/loadingBar.vue',
 }
