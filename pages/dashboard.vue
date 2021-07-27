@@ -25,7 +25,7 @@
         class="nav-item"
         :class="$route.path === '/dashboard/' ? 'active' : ''"
       >
-        <a class="nav-link" href="" @click="$router.push({ path: '/dashboard/' })">
+        <a class="nav-link" href="/dashboard" @click="$router.push({ path: '/dashboard/' })">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a
         >
@@ -36,11 +36,37 @@
       >
         <a
           class="nav-link"
-          href=""
+          href="/dashboard/transfers"
           @click="$router.push({ path: '/dashboard/transfers' })"
         >
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>transfers</span></a
+          <span>completed transfers</span></a
+        >
+      </li>
+       <li
+        class="nav-item"
+        :class="$route.path === '/dashboard/pending' ? 'active' : ''"
+      >
+        <a
+          class="nav-link"
+          href="/dashboard/pending"
+          @click="$router.push({ path: '/dashboard/pending' })"
+        >
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>recieved</span></a
+        >
+      </li>
+           <li
+        class="nav-item"
+        :class="$route.path === '/dashboard/sent' ? 'active' : ''"
+      >
+        <a
+          class="nav-link"
+          href="/dashboard/sent"
+          @click="$router.push({ path: '/dashboard/sent' })"
+        >
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>sent</span></a
         >
       </li>
 
@@ -509,6 +535,11 @@ export default {
     user() {
       return this.$auth.user
     },
+    completedTransfers() {
+      const transfers = this.user.recieved_exchange.concat(this.user.sent_exchange);
+      const newTransfers = transfers.filter(item => item.sender_private_integer && item.reciever_private_integer);
+      return newTransfers;
+    }
   },
   methods: {
     ged() {

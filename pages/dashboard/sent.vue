@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Completed Transfers</h1>
+      <h1 class="h3 mb-0 text-gray-800">Sent Transfers</h1>
       <a
         href="#"
         class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
@@ -10,19 +10,17 @@
         ><i class="fas fa-plus fa-sm text-white-50"></i> New Transfer</a
       >
     </div>
-    <div v-for="(transfer,key) in completedTransfers" :key="key" class="row">
-        <completed-transfers :transfer='transfer'/>
+    <div v-for="(transfer,key) in sentTransfers" :key="key" class="row">
+        <sent-transfer :transfer='transfer'/>
     </div>
   </div>
 </template>
 
 <script>
-// import TransferDetails from '@/components/transferDetails.vue'
-import CompletedTransfers from '@/components/completedTransfer.vue'
+import sentTransfer from '~/components/sentTransfer.vue'
 export default {
   components: {
-    // TransferDetails,
-    CompletedTransfers,
+    sentTransfer
   },
   data() {
     return {
