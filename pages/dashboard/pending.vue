@@ -27,11 +27,25 @@ export default {
     }
   },
   computed: {
+    // sentTransfers() {
+    //   return this.$auth.user.sent_exchange
+    // },
     sentTransfers() {
-      return this.$auth.user.sent_exchange
+      const transfers = this.$auth.user.sent_exchange
+      const newTransfers = transfers.filter(
+        (item) =>item.reciever_private_integer === null
+      )
+      return newTransfers
     },
+    // recievedTransfers() {
+    //   return this.$auth.user.recieved_exchange
+    // },
     recievedTransfers() {
-      return this.$auth.user.recieved_exchange
+      const transfers = this.$auth.user.recieved_exchange
+      const newTransfers = transfers.filter(
+        (item) =>item.reciever_private_integer === null
+      )
+      return newTransfers
     },
   },
   
