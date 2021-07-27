@@ -26,6 +26,9 @@ export default {
       {
         src: '/js/sb-admin-2.min.js',
       },
+      {
+        src: '/js/sb-admin-2.js',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

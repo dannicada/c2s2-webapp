@@ -96,6 +96,7 @@ export default {
         })
         console.log(response)
         this.$toast.success('Transfer request was accepted successfuly')
+        await this.$auth.fetchUser()
         this.$router.push({path: '/dashboard/'})
       } catch (err) {
         console.log(err.response)

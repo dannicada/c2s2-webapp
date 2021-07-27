@@ -126,6 +126,7 @@ export default {
         console.log(response)
         // $('#myModal').modal('toggle')
         this.$toast.success('Transfer request was created successfuly')
+        await this.$auth.fetchUser()
         document.getElementById('close').click()
       } catch (err) {
         console.log(err.response)
