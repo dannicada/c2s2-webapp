@@ -19,9 +19,9 @@
         <p>
             plain text: {{transfer.message}}
         </p>
-        <a target="_blank" rel="nofollow" href="https://undraw.co/"
+        <!-- <a target="_blank" rel="nofollow" href="https://undraw.co/"
           >see details &rarr;</a
-        >
+        > -->
       </div>
     </div>
 

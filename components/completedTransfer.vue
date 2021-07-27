@@ -23,7 +23,7 @@
                 alt="..."
               />
             </div> -->
-        <p>encrypted message: {{ transfer.message }}</p>
+        <p>encrypted message: {{ transfer.encrypted_message }}</p>
         <a
           data-toggle="modal"
           data-target="#transferDetailsModal"
