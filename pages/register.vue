@@ -105,6 +105,7 @@ export default {
   methods: {
     async register() {
       this.isLoading = true
+      this.$nuxt.$loading.start()
       const formData = await new FormData()
       formData.append('email', this.email)
       formData.append('password', this.password)
@@ -119,6 +120,7 @@ export default {
         })
         .then((response) => {
           console.log(response)
+          this.$nuxt.$loading.finish()
           this.isLoading = false
           if (response.status === 201) {
             this.$router.push({
@@ -127,6 +129,7 @@ export default {
           }
         })
         .catch((error) => {
+          this.$nuxt.$loading.finish()
           console.log(error)
         })
     },

@@ -7,5 +7,5 @@ export default function ({ $axios, error: nuxtError }) {
     //   return Promise.resolve(false)
     // })
   
-    $axios.setBaseURL('http://127.0.0.1:8000')
+    $axios.setBaseURL('https://c2s2-api.herokuapp.com/')
   }
